@@ -3,17 +3,17 @@
 
 ## This function creates a special matrix object that can cache its inverse
 makeCacheMatrix <- function(x= matrix()) {
-        m <- NULL
+        inv_x <- NULL
         set <- function(y) {
                 x <<- y
                 m <<- Null
         }
         get <- function() x
-        setmean <- function(mean) m <<- mean
-        getmean <- function() m
+        setinv <- function(inv) inv_x <<- inv
+        getinv <- function() inv_x
         list(set = set, get = get,
-        setmean = setmean,
-        getmean = getmean)
+        setinv = setinv,
+        getinv = getinv)
 }
 
 ## Computes the inverse of the matric computed by makeCacheMatrix
